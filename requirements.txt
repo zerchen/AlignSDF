@@ -1,0 +1,10 @@
+opencv-python
+numpy
+trimesh
+plyfile
+scikit-image
+scikit-learn
+chumpy
+tensorboard
+lmdb
+fire

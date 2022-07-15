@@ -1,0 +1,95 @@
+{
+  "Description": "3D hand reconstruction on the dexycb dataset.",
+  "DataSource": "data",
+  "ImageSource": "rgb",
+  "TrainSplit": "experiments/splits/dexycb_140k.json",
+  "Dataset": "dexycb",
+  "ModelType": "1encoder2decoder",
+  "LMDB": true,
+  "ImageSize": [256, 256],
+  "SdfScaleFactor": 6.205380387894951,
+  "LatentSize": 256,
+  "PointFeatSize": 3,
+  "EncodeStyle": "nerf",
+  "ScaleAug": false,
+  "PoseFeatSize": 15,
+  "SnapshotFrequency": 500,
+  "LogFrequency": 5,
+  "LogFrequencyStep": 10,
+  "NumEpochs": 800,
+  "Backbone": "resnet18",
+  "Resume": "latest.pth",
+  "Freeze": "none",
+  "PixelAlign": false,
+  "AdditionalSnapshots": [
+    100,
+    500
+  ],
+  "AdditionalLossStart": 601,
+  "SamplesPerScene": 2000,
+  "ScenesPerBatch": 64,
+  "DataLoaderThreads": 5,
+  "ClampingDistance": 0.05,
+  "HandBranch": true,
+  "ObjectBranch": true,
+  "ObjectPoseBranch": false,
+  "ManoBranch": false,
+  "DepthBranch": false,
+  "Render": false,
+  "ClassifierBranch": false,
+  "ClassifierWeight": 0.005,
+  "PenetrationLoss": false,
+  "ContactLoss": false,
+  "IndependentObjScale": false,
+  "IgnorePointFromOtherMesh": false,
+  "HandSdfWeight":0.5,
+  "ObjSdfWeight":0.5,
+  "JointWeight":0.5,
+  "VertWeight":0,
+  "ShapeRegWeight":0.0000005,
+  "PoseRegWeight":0.00005,
+  "SegWeight":0.004,
+  "ObjCenterWeight":0.5,
+  "ObjCornerWeight":0.2,
+  "PenetrationLossWeight":15.0,
+  "ContactLossWeight":0.005,
+  "DisableAug":false,
+  "BackgroundAug":false,
+  "NetworkSpecs": {
+    "dims": [
+      512,
+      512,
+      512,
+      512
+    ],
+    "dropout": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "dropout_prob": 0.2,
+    "norm_layers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "latent_in": [
+      2
+    ],
+    "num_class": 6,
+    "xyz_in_all": false,
+    "use_tanh": false,
+    "latent_dropout": false,
+    "weight_norm": true
+  },
+  "LearningRateSchedule": [
+    {
+      "Type": "Step",
+      "Initial": 0.0001,
+      "Interval": 300,
+      "Factor": 0.5
+    }
+  ]
+}
