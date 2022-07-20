@@ -3,7 +3,7 @@
 This repository is the official implementation of [AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction](https://zerchen.github.io/projects/alignsdf.html). 
 Project webpage: https://zerchen.github.io/projects/alignsdf.html.
 
-Recent work achieved impressive progress towards joint reconstruction of hands and manipulated objects from monocular color images. Existing methods focus on two alternative representations in terms of either parametric meshes or signed distance fields (SDFs). On one side, parametric mesh models can impose a strong shape prior but are limited by restricted model deformations and mesh resolutions. Mesh models, hence, may fail to precisely reconstruct details such as contact surfaces of hands and objects. SDF-based methods, on the other side, can represent arbitrary details but are lacking explicit shape priors. In this work, we combine advantages of both representations and learn SDFs models guided by explicit mesh priors. To embed prior knowledge within SDFs, we propose a joint learning framework that disentangles the pose and the shape. We obtain hand and object poses from parametric models and use them to normalize SDF representations. We show that such aligned SDFs better focus on reconstructing shape details and produce higher reconstruction qualities both for objects and hands. We evaluate our method and demonstrate significant improvement of the state of the art on the challenging ObMan and DexYCB benchmarks.
+Recent work achieved impressive progress towards joint reconstruction of hands and manipulated objects from monocular color images. Existing methods focus on two alternative representations in terms of either parametric meshes or signed distance fields (SDFs). On one side, parametric models can benefit from prior knowledge at the cost of limited shape deformations and mesh resolutions. Mesh models, hence, may fail to precisely reconstruct details such as contact surfaces of hands and objects. SDF-based methods, on the other side, can represent arbitrary details but are lacking explicit priors. In this work we aim to improve SDF models using priors provided by parametric representations. In particular, we propose a joint learning framework that disentangles the pose and the shape. We obtain hand and object poses from parametric models and use them to align SDFs in 3D space. We show that such aligned SDFs better focus on reconstructing shape details and improve reconstruction accuracy both for hands and objects. We evaluate our method and demonstrate significant improvements over the state of the art on the challenging ObMan and DexYCB benchmarks.
 ![framework](assets/alignsdf_method.png)
 
 ## Installation
@@ -82,7 +82,7 @@ If you find this work useful, please consider citing:
 ```
 @InProceedings{chen2022alignsdf,
 author       = {Chen, Zerui and Hasson, Yana and Schmid, Cordelia and Laptev, Ivan},
-title        = {AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction},
+title        = {{AlignSDF}: {Pose-Aligned} Signed Distance Fields for Hand-Object Reconstruction},
 booktitle    = {ECCV},
 year         = {2022},
 }
