@@ -90,5 +90,5 @@ year         = {2022},
 
 ## Acknowledgements
 Some of the codes are built upon [Grasping Field](https://github.com/korrawe/grasping_field), [DeepSDF](https://github.com/facebookresearch/DeepSDF), [manopth](https://github.com/hassony2/manopth) and [PoseNet](https://github.com/mks0601/3DMPPE_POSENET_RELEASE).
-Thanks them for their great works! If you find this work interesting, you might also be interested in the following publication, which addresses the task under a similar setting:
+Thanks to them for their great work! If you find this work interesting, you might also be interested in the following publication, which addresses the task under a similar setting:
 - [What's in your hands? 3D Reconstruction of Generic Objects in Hands](https://judyye.github.io/ihoi/), [Ye](https://judyye.github.io/) et al, CVPR 2022
