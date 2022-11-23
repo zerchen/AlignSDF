@@ -15,7 +15,9 @@ pip install -r requirements.txt
 ```
 
 ## Dataset preprocessing
-1. Download [ObMan](https://github.com/hassony2/obman) and [DexYCB](https://dex-ycb.github.io/) from their official webistes. I use the `s1` split of DexYCB and make its data organization same as ObMan. The `data` directory structure is described as below.
+I have put the preprocessed data at [here](https://drive.google.com/drive/folders/1GoaA6vB6TwAAHmaobVo5GjRoCq2wT21R). You could skip following steps and use my preprocessed data.
+
+Download [ObMan](https://github.com/hassony2/obman) and [DexYCB](https://dex-ycb.github.io/) from their official webistes. I use the `s1` split of DexYCB and make its data organization same as ObMan. The `data` directory structure is described as below.
 ```
 ${alignsdf}
 |-- data
@@ -63,11 +65,11 @@ ${alignsdf}
 ## Training
 Before the training process, create a `outputs` directory under `${alignsdf}` to save outputs. You could train the baseline (i.e., the re-implementation of [grasping field](https://arxiv.org/pdf/2008.04451.pdf)):
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 bash dist_train.py 4 6666 -e experiments/obman/30k_1e2d_mlp5.json
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash dist_train.sh 4 6666 -e experiments/obman/30k_1e2d_mlp5.json
 ```
 You could launch the training of our method through the script shown below:
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 bash dist_train.py 4 6666 -e experiments/obman/30k_1e2d_mlp5.json --mano --obj_pose --point_size 9 --encode both --ocrw 0
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash dist_train.sh 4 6666 -e experiments/obman/30k_1e2d_mlp5.json --mano --obj_pose --point_size 9 --encode both --ocrw 0
 ```
 
 ## Testing and evaluating
